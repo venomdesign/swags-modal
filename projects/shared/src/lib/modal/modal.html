@@ -1,0 +1,33 @@
+<div
+  class="modal-dialog modal-dialog-centered"
+  [ngStyle]="{ width: cfg.width }"
+>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{ title }}</h5>
+      <button
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.close()"
+      ></button>
+    </div>
+
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="modal-footer">
+      <!-- Dynamically render every passed-in button -->
+      <button
+        *ngFor="let b of buttons"
+        class="btn"
+        [ngClass]="'btn-' + (b.style ?? 'secondary')"
+        (click)="run(b)"
+        [disabled]="isDisabled(b)"
+      >
+        <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+        {{ b.label }}
+      </button>
+    </div>
+  </div>
+</div>

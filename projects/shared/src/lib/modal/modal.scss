@@ -1,0 +1,8 @@
+:host {
+  display: block !important;
+  @extend .modal !optional; // install bootstrap to use bootstrap core rules
+}
+
+.modal-dialog {
+  max-width: 100%;
+}
