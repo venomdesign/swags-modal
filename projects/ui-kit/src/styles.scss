@@ -1,1 +1,305 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --black: #000;
+    --white: #fff;
+  
+    --blue-90: #091F44;
+    --blue-80: #113366;
+    --blue-70: #005288;
+    --blue-60: #00608B;
+    --blue-50: #0078AE;
+    --blue-40: #3892BB;
+    --blue-30: #7AB9D5;
+    --blue-20: #66AECE;
+    --blue-10: #E3F2F8;
+    --light-blue-90: #002231;
+    --light-blue-80: #004462;
+    --light-blue-70: #006593;
+    --light-blue-60: #0084C2;
+    --light-blue-50: #00A9F5;
+    --light-blue-40: #33baf7;
+    --light-blue-30: #66cbf9;
+    --light-blue-20: #95D9F9;
+    --light-blue-10: #cceefd;
+  
+    --link-hover: #0a58ca;
+  
+    --red-90: #7A0016;
+    --red-70: #9F0120;
+    --red-50: #C41230;
+    --red-40: #DC3754;
+    --red-30: #E08493;
+    --red-10: #F8E9EB;
+  
+    --yellow-90: #C29B36; //warning
+    --yellow-70: #CCAC2D;
+    --yellow-50: #FFD639;
+    --yellow-40: #FFE785;
+    --yellow-30: #FFF6D1;
+    --yellow-10: #FEF7ED;
+  
+    --green-90: #284015;
+    --green-70: #477326;
+    --green-50: #5E9732;
+    --green-40: #85B063;
+    --green-30: #e7eab7;
+    --green-10: #E2ECDA;
+    --commute-green: #48a101;
+    --excusal-green: #4b7928;
+    --volunteer-green: #5fc012;
+  
+    --medPurple: #806CE2;
+    --blueBayoux: #506C7D;
+    --strongOrange: #BB4200;
+  
+    --grey-90: #333333;
+    --grey-80: #2E2F31;
+    --grey-70: #525457;
+    --grey-50: #72757B;
+    --grey-45: #96999E;
+    --grey-40: #C0C2C4;
+    --grey-30: #E4E4E4;
+    --grey-10: #F3F3F3;
+    /*** BESA ***/
+  
+    --bs-primary: var(--blue-70);
+    --primary: var(--blue-70);
+    --bs-success: var(--green-50);
+    --bs-warning: var(--yellow-90);
+    --bs-danger: var(--red-50);
+    --bs-error: var(--red-50);
+    --bs-red-10: var(--red-10);
+  
+    --bs-secondary: #6c757d;
+    --bs-info: var(--blue-70);
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+  
+    --bs-body-font-family: 'Roboto', sans-serif;
+    --base-ff: var(--bs-body-font-family);
+    --base-fs: 1rem;
+  
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semiBold: 600;
+    --fw-bold: 700;
+  
+    --fs-14: 0.875rem; /* 14px */
+    --fs-12: 0.75rem; /* 12px */
+  }
+
+
+
+  button, .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer !important;
+    font: var(--fw-medium) var(--base-fs) var(--base-ff);
+    border-radius: 0.25rem;
+
+    &.primary {
+        background: var(--blue-70);
+        border-color: var(--blue-70);
+        color: var(--white);
+
+        &:hover {
+            background: var(--white);
+            color: var(--blue-70);
+        }
+
+        &:active {
+            background: var(--blue-90);
+            border-color: var(--blue-90);
+            color: var(--white);
+        }
+
+        &:disabled {
+            background: var(--grey-30) !important;
+            border-color: var(--grey-30) !important;
+            color: var(--grey-50) !important;
+        }
+    }
+
+    &.secondary {
+        background: var(--white);
+        border-color: var(--blue-70);
+        color: var(--blue-70);
+
+        &:hover {
+            background: var(--white);
+            color: var(--light-blue-60);
+            border-color: var(--light-blue-60);
+        }
+
+        &:active {
+            background: var(--blue-90);
+            border-color: var(--blue-90);
+            color: var(--white);
+        }
+        &:disabled {
+            background: var(--white);
+            border-color: var(--grey-50);
+            color: var(--grey-50);
+        }
+    }
+
+    &.tertiary {
+        background: transparent;
+        color: var(--blue-70);
+
+        &:hover {
+            color: var(--light-blue-60);
+        }
+
+        &:active {
+            color: var(--blue-90);
+        }
+        &:disabled {
+            background: transparent;
+            color: var(--grey-50);
+        }
+    }
+
+    &.destructive {
+        background: var(--red-50);
+        border-color: var(--red-50);
+        color: var(--white);
+
+        &:hover {
+            background: var(--white);
+            border-color: var(--red-70);
+            color: var(--red-70);
+        }
+
+        &:active {
+            background: var(--red-90);
+            border-color: var(--red-90);
+            color: var(--white);
+        }
+        &:disabled {
+            background: var(--gray-10);
+            border-color: var(--grey-50);
+            color: var(--grey-50);  
+        }
+
+        &.outline {
+            background: var(--white);
+            color: var(--red-50);
+
+            &:hover {
+                background: var(--red-50);
+                color: var(--white);
+                border-color: var(--red-50);
+            }
+
+            &:active {
+                background: var(--red-90);
+                border-color: var(--red-90);
+                color: var(--white);
+            }
+        }
+
+        &.inverse {
+            background: transparent;
+            border-color: transparent;
+            color: var(--red-50);
+
+            &:hover {
+                color: var(--red-70);
+            }
+
+            &:active {
+                color: var(--red-90);
+            }
+        }
+    }
+
+    &.success {
+        background: var(--green-70);
+        border-color: var(--green-70);
+        color: var(--white);
+
+        &:hover {
+            background: var(--white);
+            color: var(--green-70);
+            border-color: var(--green-70);
+        }
+
+        &:active {
+            background: var(--green-90);
+            border-color: var(--green-90);
+            color: var(--white);
+        }
+    }
+
+    &.text {
+        background: transparent;
+        border-color: transparent;
+        color: var(--blue-50);
+        text-transform: none;
+
+        &:hover {
+            background: transparent;
+            color: var(--link-hover);
+            border-color: transparent;
+        }
+    }
+
+    &.light {
+        background: transparent;
+        border-color: transparent;
+        color: var(--white);
+        text-transform: none;
+        // &:hover { background: transparent; color: var(--link-hover); border-color: transparent; }
+    }
+
+    &.dark {
+        background: transparent;
+        border-color: transparent;
+        color: var(--primary);
+        text-transform: none;
+        // &:hover { background: transparent; color: var(--link-hover); border-color: transparent; }
+    }
+
+    &:disabled {
+        background: var(--white);
+        color: var(--grey-50);
+        cursor: not-allowed;
+        border-color: var(--grey-50);
+
+        &:hover,
+        &:active {
+            background: var(--white);
+            color: var(--grey-50);
+            cursor: not-allowed;
+            border-color: var(--grey-50);
+        }
+    }
+
+    &.iconBtn {
+        span {
+            display: none
+        }
+
+        &::after {
+            all: unset
+        }
+    }
+}
+
+.cdk-overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.0); /* Darker semi-transparent background */
+  }
+  
+  .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0.8;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }

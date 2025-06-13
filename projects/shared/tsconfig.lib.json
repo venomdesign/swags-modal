@@ -7,7 +7,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": ["bootstrap"]
   },
   "include": [
     "src/**/*.ts"

@@ -32,10 +32,10 @@
             "outputPath": "dist/demo",
             "polyfills": ["zone.js"],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/global_styles.css"
             ],
             "tsConfig": "tsconfig.app.json"
@@ -110,7 +110,11 @@
                 "input": "projects/ui-kit/public"
               }
             ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/ui-kit/src/styles.scss"
             ],
             "server": "projects/ui-kit/src/main.server.ts",

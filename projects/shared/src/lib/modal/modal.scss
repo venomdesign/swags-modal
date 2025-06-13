@@ -3,6 +3,56 @@
   @extend .modal !optional; // install bootstrap to use bootstrap core rules
 }
 
+/* Customize the modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.3); /* Darker backdrop */
+}
+
+/* Style the modal dialog */
 .modal-dialog {
-  max-width: 100%;
+  max-width: 600px; /* Adjust width */
+  margin: 30px auto; /* Center alignment */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Style the modal content */
+.modal-content {
+  background-color: #fff; /* Light background */
+  border: 1px solid #131313; /* Blue border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Style the modal header */
+.modal-header {
+  color: #000; /* White text */
+  border-bottom: none; /* Remove default border */
+  padding: 8px 16px;
+}
+
+/* Style the modal title */
+.modal-title {
+  font-size: 1.5rem; /* Larger title */
+  font-weight: bold;
+}
+
+/* Style the close button */
+// .modal-header .btn-close {
+//   color: white; /* White close button */
+//   opacity: 1; /* Fully visible */
+// }
+
+/* Style the modal body */
+.modal-body {
+  padding: 16px;
+  font-size: 1rem;
+  color: #333; /* Darker text */
+}
+
+/* Style the modal footer */
+.modal-footer {
+  gap: 0.5rem;
+  border-top: none; /* Remove default border */
+  padding: 16px;
 }

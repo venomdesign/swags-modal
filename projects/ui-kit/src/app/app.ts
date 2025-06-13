@@ -15,12 +15,14 @@ export class App {
 
   open() {
     const buttons: ModalButton<boolean>[] = [
-      { label: 'Close', style: 'secondary', closeOnClick: true },
-      { label: 'Ok', style: 'primary', closeOnClick: true, disabled: true },
+      { label: 'Back', style: 'destructive', closeOnClick: false, disabled: false, alignment: 'left', action: () => console.log('Back Clicked') },
+      { label: 'Left', style: 'secondary', closeOnClick: false, disabled: false, alignment: 'left', action: () => console.log('Left Clicked') },
+      { label: 'Close', style: 'tertiary', closeOnClick: true },
+      { label: 'Primary Disabled', style: 'success', closeOnClick: false, disabled: true },
     ];
 
     this.modal.open(Modal, {
-      width: '350px',
+      width: '500px',
       buttons,
     });
   }

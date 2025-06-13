@@ -39,6 +39,10 @@ export class Modal<D = any, R = any> {
     }
   }
 
+  get leftAligned(): boolean {
+    return this.buttons?.some(b => b.alignment === 'left');
+  }
+
   /* helper so template stays tidy */
   run(btn: ModalButton<R, D>): void {
     if (btn.disabled instanceof Function && btn.disabled(this.data)) return;

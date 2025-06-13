@@ -1,15 +1,8 @@
-<div
-  class="modal-dialog modal-dialog-centered"
-  [ngStyle]="{ width: cfg.width }"
->
+<div class="modal-dialog modal-dialog-centered" [ngStyle]="{ width: cfg.width }">
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title">{{ title }}</h5>
-      <button
-        class="btn-close"
-        aria-label="Close"
-        (click)="modal.close()"
-      ></button>
+      <button class="btn-close" aria-label="Close" (click)="modal.close()">X</button>
     </div>
 
     <div class="modal-body">
@@ -18,16 +11,30 @@
 
     <div class="modal-footer">
       <!-- Dynamically render every passed-in button -->
-      <button
-        *ngFor="let b of buttons"
-        class="btn"
-        [ngClass]="'btn-' + (b.style ?? 'secondary')"
-        (click)="run(b)"
-        [disabled]="isDisabled(b)"
-      >
-        <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
-        {{ b.label }}
-      </button>
+      @if(leftAligned) {
+        <div class="d-flex gap-2 me-auto">
+          @for(b of buttons; track $index) {
+            @if(b.alignment === 'left') {
+              <button class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)">
+                <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+                {{ b.label }}
+              </button>
+            }
+          }
+        </div>
+      }
+      <!-- @if(leftAligned === false) {
+        <div class="d-flex gap-2 ms-auto"> -->
+          @for(b of buttons; track $index) {
+            @if(b.alignment !== 'left') {
+              <button class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)">
+                <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+                {{ b.label }}
+              </button>
+            }
+          }
+        <!-- </div>
+      } -->
     </div>
   </div>
 </div>

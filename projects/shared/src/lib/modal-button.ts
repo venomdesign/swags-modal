@@ -9,6 +9,10 @@ export interface ModalButton<R = any, D = any> {
   icon?: string;
   /** If true, modal closes automatically after click (default = false) */
   closeOnClick?: boolean;
+  /** Alignment, buttons show up on the left or right of the modal **/
+  alignment?: string;
+  /** order, order your buttons in the modal **/
+  order?: number;
   /** Enable/disable dynamically – supports a function for live evaluation */
   disabled?: boolean | ((data: D) => boolean);
   /**
