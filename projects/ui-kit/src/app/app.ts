@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ModalButton, ModalService, Modal } from '@ui/shared';
 
@@ -10,7 +10,7 @@ import { ModalButton, ModalService, Modal } from '@ui/shared';
 })
 export class App {
   protected title = 'ui-kit';
-
+  @ViewChild('testBody', { static: true }) testBody!: TemplateRef<any>;
   constructor(private modal: ModalService) {}
 
   open() {
@@ -24,6 +24,12 @@ export class App {
     this.modal.open(Modal, {
       width: '500px',
       buttons,
+      title: 'Swag\'s Global Config Modal',
+      bodyTemplate: this.testBody,
     });
+  }
+
+  consoleClick() {
+    console.log('clicked');
   }
 }

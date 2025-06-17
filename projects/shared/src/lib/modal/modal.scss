@@ -6,6 +6,14 @@
 /* Customize the modal backdrop */
 .modal-backdrop {
   background-color: rgba(0, 0, 0, 0.3); /* Darker backdrop */
+  z-index: 1040;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  /* pointer-events: none; Prevent backdrop from blocking clicks for testing */
 }
 
 /* Style the modal dialog */
@@ -22,6 +30,9 @@
   border: 1px solid #131313; /* Blue border */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  z-index: 1050;
+  position: relative;
+  pointer-events: auto;
 }
 
 /* Style the modal header */
@@ -55,4 +66,18 @@
   gap: 0.5rem;
   border-top: none; /* Remove default border */
   padding: 16px;
+}
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.3) !important; /* semi-transparent */
+  z-index: 1040 !important;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1 !important;
+  transition: background-color 0.3s ease;
+}
+
+.cdk-overlay-pane .modal-content {
+  z-index: 1050 !important;
+  position: relative;
 }

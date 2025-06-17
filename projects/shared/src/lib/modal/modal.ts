@@ -5,6 +5,7 @@ import {
   Input,
   Optional,
   SkipSelf,
+  TemplateRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -26,6 +27,7 @@ import {
 export class Modal<D = any, R = any> {
   @Input() title = 'Modal';
   @Input() buttons: ModalButton<R, D>[] = [];
+  @Input() bodyTemplate?: TemplateRef<any>;
 
   constructor(
     public modal: ModalRef<R>,
@@ -36,6 +38,12 @@ export class Modal<D = any, R = any> {
   ngOnInit(): void {
     if (!this.buttons.length && this.cfg?.buttons) {
       this.buttons = this.cfg.buttons as ModalButton<R, D>[];
+    }
+    if (!this.bodyTemplate && this.cfg?.bodyTemplate) {
+      this.bodyTemplate = this.cfg.bodyTemplate;
+    }
+    if (this.cfg?.title) {
+      this.title = this.cfg.title;
     }
   }
 

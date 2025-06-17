@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open --port 0",
     "build": "ng build",
     "serve:ssr:ui-kit": "node dist/ui-kit/server/server.mjs"
   },
@@ -31,7 +31,7 @@
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "@types/express": "^5.0.1",
-    "@types/node": "^20.17.19",
+    "@types/node": "^24.0.3",
     "ng-packagr": "^20.0.0",
     "typescript": "^5.8.2"
   }

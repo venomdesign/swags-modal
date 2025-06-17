@@ -1,8 +1,10 @@
 import { ModalButton } from '@ui/shared';
+import { TemplateRef } from '@angular/core';
 
 export interface ModalConfig<D = any, R = any> {
   width?: string;
   height?: string;
+  title?: string;
   maxWidth?: string | number;
   panelClass?: string | string[];
   backdropClass?: string | string[];
@@ -16,4 +18,5 @@ export interface ModalConfig<D = any, R = any> {
     bottom?: string;
   };
   buttons?: ModalButton<R, D>[];
+  bodyTemplate?: TemplateRef<any>;
 }

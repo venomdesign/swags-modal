@@ -294,12 +294,3 @@
         }
     }
 }
-
-.cdk-overlay-backdrop {
-    background-color: rgba(0, 0, 0, 0.0); /* Darker semi-transparent background */
-  }
-  
-  .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-    opacity: 0.8;
-    transition: background-color 0.3s ease; /* Smooth transition effect */
-  }

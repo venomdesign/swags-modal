@@ -6,7 +6,11 @@
     </div>
 
     <div class="modal-body">
-      <ng-content></ng-content>
+      @if(bodyTemplate) {
+        <ng-container *ngTemplateOutlet="bodyTemplate; context: { data: data }"></ng-container>
+      } @else {
+        <ng-content></ng-content>
+      }
     </div>
 
     <div class="modal-footer">

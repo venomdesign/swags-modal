@@ -12,7 +12,7 @@ export interface ModalButton<R = any, D = any> {
   /** Alignment, buttons show up on the left or right of the modal **/
   alignment?: string;
   /** order, order your buttons in the modal **/
-  order?: number;
+  // order?: number; // actually dont need the order is based off the order in the ts file
   /** Enable/disable dynamically – supports a function for live evaluation */
   disabled?: boolean | ((data: D) => boolean);
   /**
