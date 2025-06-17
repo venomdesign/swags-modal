@@ -15,15 +15,19 @@ export class App {
 
   open() {
     const buttons: ModalButton<boolean>[] = [
-      { label: 'Back', style: 'destructive', closeOnClick: false, disabled: false, alignment: 'left', action: () => console.log('Back Clicked') },
-      { label: 'Left', style: 'secondary', closeOnClick: false, disabled: false, alignment: 'left', action: () => console.log('Left Clicked') },
+      { label: 'Back', style: 'destructive', closeOnClick: false, disabled: false, action: () => console.log('Back Clicked') },
+      { label: 'Left', style: 'secondary', closeOnClick: false, disabled: false, alignment: 'left', action: () => this.alertSomething() },
       { label: 'Close', style: 'tertiary', closeOnClick: true },
-      { label: 'Primary Disabled', style: 'success', closeOnClick: false, disabled: true },
+      { label: 'Primary', style: 'success', closeOnClick: false, disabled: false, alignment: 'left' },
     ];
 
     this.modal.open(Modal, {
       width: '500px',
+      type: 'alert',
       buttons,
     });
+  }
+  alertSomething() {
+    console.log('MFE suck');
   }
 }

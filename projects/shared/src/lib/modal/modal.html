@@ -1,8 +1,13 @@
-<div class="modal-dialog modal-dialog-centered" [ngStyle]="{ width: cfg.width }">
+<div class="modal-dialog modal-dialog-centered" [ngStyle]="{ width: cfg.width }" cdkDrag
+cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>
   <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title">{{ title }}</h5>
-      <button class="btn-close" aria-label="Close" (click)="modal.close()">X</button>
+    <div class="modal-header align-items-start">
+      <div>
+        <h5>h5 sup header</h5>
+        <h1><fa-icon [icon]="['fa', 'thumbs-up']" size="3x"></fa-icon> {{ title }}</h1>
+        <h6>h6 sub header</h6>
+      </div>
+      <button class="btn-close mt-2" aria-label="Close" (click)="modal.close()">X</button>
     </div>
 
     <div class="modal-body">

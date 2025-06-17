@@ -8,6 +8,7 @@ export interface ModalConfig<D = any, R = any> {
   backdropClass?: string | string[];
   hasBackdrop?: boolean;
   disableClose?: boolean;
+  type?: string;
   data?: D;
   position?: {
     top?: string;
