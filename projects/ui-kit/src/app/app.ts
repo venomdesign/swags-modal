@@ -26,6 +26,7 @@ export class App {
       buttons,
       title: 'Swag\'s Global Config Modal',
       bodyTemplate: this.testBody,
+      type: 'alert',
     });
   }
 

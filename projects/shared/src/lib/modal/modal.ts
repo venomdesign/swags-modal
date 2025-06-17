@@ -28,6 +28,7 @@ export class Modal<D = any, R = any> {
   @Input() title = 'Modal';
   @Input() buttons: ModalButton<R, D>[] = [];
   @Input() bodyTemplate?: TemplateRef<any>;
+  public type?: string;
 
   constructor(
     public modal: ModalRef<R>,
@@ -44,6 +45,9 @@ export class Modal<D = any, R = any> {
     }
     if (this.cfg?.title) {
       this.title = this.cfg.title;
+    }
+    if (this.cfg?.type) {
+      this.type = this.cfg.type;
     }
   }
 

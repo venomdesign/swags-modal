@@ -1,7 +1,11 @@
-<div class="modal-dialog modal-dialog-centered" [ngStyle]="{ width: cfg.width }">
+<div class="modal-dialog modal-dialog-centered" [ngClass]="type ? 'modal-' + type : ''" [ngStyle]="{ width: cfg.width }">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title">{{ title }}</h5>
+      <div class="d-flex flex-column">
+        <h5>H5 Title</h5>
+        <h1 class="modal-title">{{ title }}</h1>
+        <h6>H6 Title</h6>
+      </div>
       <button class="btn-close" aria-label="Close" (click)="modal.close()">X</button>
     </div>
 
@@ -14,7 +18,7 @@
     </div>
 
     <div class="modal-footer">
-      <!-- Dynamically render every passed-in button -->
+      <!--  render every passed-in button -->
       @if(leftAligned) {
         <div class="d-flex gap-2 me-auto">
           @for(b of buttons; track $index) {

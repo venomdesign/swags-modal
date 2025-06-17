@@ -2,7 +2,7 @@
   display: block !important;
   @extend .modal !optional;
 }
-
+.modal-alert .modal-body { background-color: #f00; }
 /* Customize the modal backdrop */
 .modal-backdrop {
   background-color: rgba(0, 0, 0, 0.7) !important;
@@ -33,7 +33,7 @@
 .modal-content {
   background-color: #fff;
   /* Light background */
-  // border: 1px solid #131313;
+  border: 1px solid #131313;
   /* Blue border */
   border-radius: 8px;
   /* Rounded corners */

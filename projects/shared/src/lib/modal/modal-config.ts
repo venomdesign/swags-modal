@@ -19,4 +19,5 @@ export interface ModalConfig<D = any, R = any> {
   };
   buttons?: ModalButton<R, D>[];
   bodyTemplate?: TemplateRef<any>;
+  type?: 'alert' | 'confirm' | 'info' | 'custom' | string;
 }
