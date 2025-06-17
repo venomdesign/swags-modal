@@ -1,47 +1,48 @@
-<div class="modal-dialog modal-dialog-centered" [ngClass]="type ? 'modal-' + type : ''" [ngStyle]="{ width: cfg.width }">
+<div class="modal-dialog modal-dialog-centered" [ngClass]="type ? 'modal-' + type : ''"
+  [ngStyle]="{ width: cfg.width }">
   <div class="modal-content">
-    <div class="modal-header">
-      <div class="d-flex flex-column">
-        <h5>H5 Title</h5>
-        <h1 class="modal-title">{{ title }}</h1>
-        <h6>H6 Title</h6>
+    <div class="modal-header align-items-start">
+      <div>
+        <h5>h5 sup header</h5>
+        <h1><fa-icon [icon]="['fa', 'thumbs-up']" size="3x"></fa-icon> {{ title }}</h1>
+        <h6>h6 sub header</h6>
       </div>
-      <button class="btn-close" aria-label="Close" (click)="modal.close()">X</button>
+      <button class="btn-close mt-2" aria-label="Close" (click)="modal.close()">X</button>
     </div>
 
     <div class="modal-body">
       @if(bodyTemplate) {
-        <ng-container *ngTemplateOutlet="bodyTemplate; context: { data: data }"></ng-container>
+      <ng-container *ngTemplateOutlet="bodyTemplate; context: { data: data }"></ng-container>
       } @else {
-        <ng-content></ng-content>
+      <ng-content></ng-content>
       }
     </div>
 
     <div class="modal-footer">
       <!--  render every passed-in button -->
       @if(leftAligned) {
-        <div class="d-flex gap-2 me-auto">
-          @for(b of buttons; track $index) {
-            @if(b.alignment === 'left') {
-              <button class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)">
-                <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
-                {{ b.label }}
-              </button>
-            }
-          }
-        </div>
+      <div class="d-flex gap-2 me-auto">
+        @for(b of buttons; track $index) {
+        @if(b.alignment === 'left') {
+        <button class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)">
+          <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+          {{ b.label }}
+        </button>
+        }
+        }
+      </div>
       }
       <!-- @if(leftAligned === false) {
         <div class="d-flex gap-2 ms-auto"> -->
-          @for(b of buttons; track $index) {
-            @if(b.alignment !== 'left') {
-              <button class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)">
-                <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
-                {{ b.label }}
-              </button>
-            }
-          }
-        <!-- </div>
+      @for(b of buttons; track $index) {
+      @if(b.alignment !== 'left') {
+      <button class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)">
+        <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+        {{ b.label }}
+      </button>
+      }
+      }
+      <!-- </div>
       } -->
     </div>
   </div>

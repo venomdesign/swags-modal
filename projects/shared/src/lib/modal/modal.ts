@@ -8,6 +8,7 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FaIconComponent, IconLookup } from '@fortawesome/angular-fontawesome';
 import {
   ModalRef,
   MODAL_DATA,
@@ -19,7 +20,7 @@ import {
 @Component({
   standalone: true,
   selector: 'ui-modal',
-  imports: [CommonModule],
+  imports: [CommonModule, FaIconComponent],
   templateUrl: './modal.html',
   styleUrls: ['./modal.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,7 +30,8 @@ export class Modal<D = any, R = any> {
   @Input() buttons: ModalButton<R, D>[] = [];
   @Input() bodyTemplate?: TemplateRef<any>;
   public type?: string;
-
+  icon!: IconLookup;
+  
   constructor(
     public modal: ModalRef<R>,
     @Inject(MODAL_DATA) public data: D,
