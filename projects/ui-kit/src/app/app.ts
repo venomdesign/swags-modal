@@ -10,7 +10,7 @@ import { ModalButton, ModalService, Modal } from '@ui/shared';
 })
 export class App {
   protected title = 'ui-kit';
-  @ViewChild('testBody', { static: true }) testBody!: TemplateRef<any>;
+  @ViewChild('productDetails', { static: true }) productDetails!: TemplateRef<any>;
   constructor(private modal: ModalService) {}
 
   open() {
@@ -25,8 +25,8 @@ export class App {
       width: '500px',
       buttons,
       title: 'Swag\'s Global Config Modal',
-      bodyTemplate: this.testBody,
-      type: 'alert',
+      bodyTemplate: this.productDetails,
+      type: '',
     });
   }
 
