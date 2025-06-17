@@ -58,7 +58,7 @@ export class ModalService {
       maxWidth: cfg.maxWidth ?? '80vw',
       panelClass: cfg.panelClass ?? 'besa-modal',
       backdropClass: cfg.backdropClass ?? 'modal-backdrop',
-      hasBackdrop: cfg.hasBackdrop !== false,
+      // hasBackdrop: cfg.hasBackdrop !== false,
       scrollStrategy: this.overlay.scrollStrategies.block(),
       positionStrategy: pos,
     });

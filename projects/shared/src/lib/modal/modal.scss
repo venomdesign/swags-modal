@@ -1,35 +1,44 @@
 :host {
   display: block !important;
-  @extend .modal !optional; // install bootstrap to use bootstrap core rules
+  @extend .modal !optional;
 }
 
 /* Customize the modal backdrop */
 .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.3); /* Darker backdrop */
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  /* Darker backdrop */
   z-index: 1040;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  opacity: 1;
+  // opacity: 1;
   /* pointer-events: none; Prevent backdrop from blocking clicks for testing */
 }
 
 /* Style the modal dialog */
 .modal-dialog {
-  max-width: 600px; /* Adjust width */
-  margin: 30px auto; /* Center alignment */
-  border-radius: 8px; /* Rounded corners */
-  overflow: hidden; /* Prevent content overflow */
+  max-width: 600px;
+  /* Adjust width */
+  // margin: 30px auto;
+  /* Center alignment */
+  border-radius: 8px;
+  /* Rounded corners */
+  overflow: hidden;
+  /* Prevent content overflow */
 }
 
 /* Style the modal content */
 .modal-content {
-  background-color: #fff; /* Light background */
-  border: 1px solid #131313; /* Blue border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: #fff;
+  /* Light background */
+  // border: 1px solid #131313;
+  /* Blue border */
+  border-radius: 8px;
+  /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
   z-index: 1050;
   position: relative;
   pointer-events: auto;
@@ -37,14 +46,21 @@
 
 /* Style the modal header */
 .modal-header {
-  color: #000; /* White text */
-  border-bottom: none; /* Remove default border */
+  color: #000;
+  /* White text */
+  border-bottom: none;
+  /* Remove default border */
   padding: 8px 16px;
+  
+  -webkit-box-shadow: 0 4px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 4px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 2px rgba(0,0,0,0.2);
 }
 
 /* Style the modal title */
 .modal-title {
-  font-size: 1.5rem; /* Larger title */
+  font-size: 1.5rem;
+  /* Larger title */
   font-weight: bold;
 }
 
@@ -58,26 +74,33 @@
 .modal-body {
   padding: 16px;
   font-size: 1rem;
-  color: #333; /* Darker text */
+  color: #333;
+  /* Darker text */
 }
 
 /* Style the modal footer */
 .modal-footer {
   gap: 0.5rem;
-  border-top: none; /* Remove default border */
+  border-top: none;
+  /* Remove default border */
   padding: 16px;
-}
-.cdk-overlay-backdrop {
-  background-color: rgba(0, 0, 0, 0.3) !important; /* semi-transparent */
-  z-index: 1040 !important;
-}
-
-.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-  opacity: 1 !important;
-  transition: background-color 0.3s ease;
+  -webkit-box-shadow: 2px 4px 0 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 2px 4px 0 2pxrgba(0,0,0,0.2);
+  box-shadow: 2px 4px 0 2pxrgba(0,0,0,0.2);
 }
 
-.cdk-overlay-pane .modal-content {
-  z-index: 1050 !important;
-  position: relative;
-}
+// .cdk-overlay-backdrop {
+//   background-color: rgba(0, 0, 0, 0.3) !important;
+//   /* semi-transparent */
+//   z-index: 1040 !important;
+
+//   &.cdk-overlay-backdrop-showing {
+//     opacity: 1;
+//     transition: background-color 0.3s ease;
+//   }
+// }
+
+// .cdk-overlay-pane .besa-modal {
+//   z-index: 1050 !important;
+//   position: relative;
+// }
