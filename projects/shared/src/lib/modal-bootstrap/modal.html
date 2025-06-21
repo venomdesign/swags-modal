@@ -1,0 +1,38 @@
+<div class="modal fade" tabindex="-1" [ngClass]="{ show: show }" [ngStyle]="{ display: show ? 'block' : 'none', background: 'rgba(0,0,0,0.5)' }" *ngIf="show">
+  <div class="modal-dialog modal-dialog-centered" [ngClass]="type ? 'modal-' + type : ''" [ngStyle]="{ width: config?.width }">
+    <div class="modal-content">
+      <div class="modal-header" [class.shadow-none]="type === 'alert'">
+        <div class="d-flex flex-column">
+          <h5 *ngIf="type != 'alert'">H5 Title</h5>
+          <h1 class="modal-title">{{ title }}</h1>
+          <h6 *ngIf="type != 'alert'">H6 Title</h6>
+        </div>
+        <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+      </div>
+      <div class="modal-body">
+        <ng-container *ngIf="bodyTemplate; else content">
+          <ng-container *ngTemplateOutlet="bodyTemplate; context: { data: data }"></ng-container>
+        </ng-container>
+        <ng-template #content>
+          <ng-content></ng-content>
+        </ng-template>
+      </div>
+      <div class="modal-footer" [class.shadow-none]="type === 'alert'">
+        <div class="d-flex gap-2 me-auto" *ngIf="leftAligned">
+          <ng-container *ngFor="let b of buttons">
+            <button *ngIf="b.alignment === 'left'" class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)" [attr.aria-label]="isDisabled(b) ? 'Disabled - reason' : 'Click here to ' + b.label" [title]="isDisabled(b) ? 'Disabled - reason' : ''">
+              <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+              {{ b.label }}
+            </button>
+          </ng-container>
+        </div>
+        <ng-container *ngFor="let b of buttons">
+          <button *ngIf="b.alignment !== 'left'" class="btn" [ngClass]="(b.style ?? 'secondary')" (click)="run(b)" [disabled]="isDisabled(b)" [attr.aria-label]="isDisabled(b) ? 'Disabled - reason' : 'Click here to ' + b.label" [title]="isDisabled(b) ? 'Disabled - reason' : ''">
+            <i *ngIf="b.icon" [class]="b.icon" aria-hidden="true"></i>
+            {{ b.label }}
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,12 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ModalButton, ModalService, Modal } from '@ui/shared';
+import { ModalBootstrap } from '../../../shared/src/lib/modal-bootstrap/modal-bootstrap';
+import { ModalButtons } from '@ui/shared/lib/modal-bootstrap/modal-button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ModalBootstrap],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -32,5 +34,35 @@ export class App {
 
   consoleClick() {
     console.log('clicked');
+  }
+
+  /** bootstrap **/
+  showModal = false;
+
+  modalButtons: ModalButtons[] = [
+    {
+      label: 'OK',
+      style: 'primary',
+      closeOnClick: true,
+      alignment: 'left',
+      action: (modal, data) => {
+        alert('OK clicked!');
+        // modal.close(); // Not needed if closeOnClick is true
+      },
+    },
+    {
+      label: 'Cancel',
+      style: 'secondary',
+      closeOnClick: true,
+    },
+  ];
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  onModalClosed(result: any) {
+    this.showModal = false;
+    console.log('Modal closed with:', result);
   }
 }
